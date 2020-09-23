@@ -17,6 +17,7 @@ build: root clean
 clean: root
 	rm -rf fedora-kickstarts/ Fedora-SoC/ files/
 	git checkout files/
+	chown Eric_Vader:Eric_Vader -R .
 
 run: root
 	qemu-kvm -smp $(N_PROC) -m 2G -cdrom fedora-kickstarts/Fedora-SoC-Mac.iso
