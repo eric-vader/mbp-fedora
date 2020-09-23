@@ -4,8 +4,8 @@ setenforce 0
 
 set -eu -o pipefail
 
-git clone git@github.com:eric-vader/Fedora-SoC.git Fedora-SoC
-rsync -av --exclude=".*" Fedora-SoC ./
+runuser -l Eric_Vader -c "git clone git@github.com:eric-vader/Fedora-SoC.git ~/Workspace/mbp-fedora/Fedora-SoC"
+rsync -av --exclude=".*" Fedora-SoC/ ./
 
 KICKSTART_LBL=Fedora-SoC-Mac
 FEDORA_KICKSTARTS_GIT_URL=https://pagure.io/fedora-kickstarts.git
