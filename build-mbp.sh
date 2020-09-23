@@ -5,7 +5,7 @@ setenforce 0
 set -eu -o pipefail
 
 runuser -l Eric_Vader -c "git clone git@github.com:eric-vader/Fedora-SoC.git ~/Workspace/mbp-fedora/Fedora-SoC"
-cp -rT Fedora-SoC/fedora-live-soc.ks ./fedora-live-soc.ks
+cp Fedora-SoC/fedora-live-soc.ks ./fedora-live-soc.ks
 cp -rT Fedora-SoC/files ./files
 
 KICKSTART_LBL=Fedora-SoC-Mac

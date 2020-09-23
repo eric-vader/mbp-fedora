@@ -12,10 +12,10 @@ install: root
 	dnf install -y livecd-tools git zip
 
 build: root clean
-	./build.sh
+	./build-mbp.sh
 
 clean: root
-	rm -rf fedora-kickstarts/ Fedora-SoC/ files/
+	rm -rf fedora-kickstarts/ Fedora-SoC/ files/ packages.aunali1.com/ fedora-live-soc.ks
 	git checkout files/
 	chown Eric_Vader:Eric_Vader -R .
 
@@ -24,4 +24,4 @@ run: root
 
 release: root
 	mkdir -p releases/
-	cp fedora-kickstarts/Fedora-SoC.iso releases/Fedora-SoC-Mac-$(shell date +"%Y_%m_%d_%I_%M_%p").iso
+	cp fedora-kickstarts/Fedora-SoC-Mac.iso releases/Fedora-SoC-Mac-$(shell cd Fedora-SoC; git rev-parse --short HEAD).iso
