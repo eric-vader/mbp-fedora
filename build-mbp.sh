@@ -12,7 +12,7 @@ KICKSTART_LBL=Fedora-SoC-Mac
 FEDORA_KICKSTARTS_GIT_URL=https://pagure.io/fedora-kickstarts.git
 FEDORA_KICKSTARTS_BRANCH_NAME=f32
 FEDORA_KICKSTARTS_COMMIT_HASH=43675318443ff0b57fcc8b2b47b213126616c2d8        # https://pagure.io/fedora-kickstarts/commits/f32
-LIVECD_CACHE_PATH=/var/cache/live
+LIVECD_CACHE_PATH=/dev/shm
 
 ### Debug commands
 echo "FEDORA_KICKSTARTS_BRANCH_NAME=${FEDORA_KICKSTARTS_BRANCH_NAME}"
