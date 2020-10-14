@@ -23,6 +23,7 @@ kernel-modules-5.7.6-201.mbp.fc32.x86_64
 kernel-modules-extra-5.7.6-201.mbp.fc32.x86_64
 kernel-modules-internal-5.7.6-201.mbp.fc32.x86_64
 
+kmod-wl
 %end
 
 
