@@ -20,7 +20,7 @@ clean: root
 	chown Eric_Vader:Eric_Vader -R .
 
 run: root
-	qemu-kvm -smp $(N_PROC) -m 2G -cdrom fedora-kickstarts/Fedora-SoC-Mac.iso
+	qemu-kvm -smp $(N_PROC) -m 8G -cdrom fedora-kickstarts/Fedora-SoC-Mac.iso
 
 release: root
 	mkdir -p releases/

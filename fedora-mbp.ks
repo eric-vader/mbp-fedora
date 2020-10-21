@@ -71,8 +71,10 @@ rm -rf /etc/resolv.conf
 
 sed -i '/^type=rpm.*/a exclude=kernel,kernel-core,kernel-devel,kernel-modules,kernel-modules-extra,kernel-modules-internal' /etc/yum.repos.d/fedora*.repo
 # echo -e '[mbp-fedora-kernel]\nname=mbp-fedora-kernel\nbaseurl=http://fedora-mbp-repo.herokuapp.com/\nenabled=1\ngpgcheck=0' > /etc/yum.repos.d/mbp-fedora-kernel.repo
-echo -e '[device]\nwifi.backend=iwd' > /etc/NetworkManager/conf.d/wifi_backend.conf
-systemctl enable iwd.service
+#echo -e '[device]\nwifi.backend=iwd' > /etc/NetworkManager/conf.d/wifi_backend.conf
+#systemctl enable iwd.service
+
+echo -n 0x02 > /sys/module/hid_apple/parameters/fnmode
 
 %end
 
