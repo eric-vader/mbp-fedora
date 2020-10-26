@@ -43,15 +43,4 @@ mkdir -p ${LIVECD_CACHE_PATH}
 livecd-creator --verbose --config=fedora-mbp.ks --fslabel=${KICKSTART_LBL} --cache=${LIVECD_CACHE_PATH}
 livecd_exitcode=$?
 
-### Zip iso and split it into multiple parts - github max size of release attachment is 2GB, where ISO is sometimes bigger than that
-mkdir -p ./output_zip
-zip -s 1500m ./output_zip/livecd.zip ./*.iso
-
-### Calculate sha256 sums of built ISO
-sha256sum ./*.iso > ./output_zip/sha256
-
-find ./ | grep ".iso"
-find ./ | grep ".zip"
-kill "$bgPID"
-
 exit $livecd_exitcode
