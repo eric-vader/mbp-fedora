@@ -60,7 +60,7 @@ echo
 while true; do
 
     clear;
-    R_RES_LESS=$((R_RES-2))
+    R_RES_LESS=$((R_RES-3))
     for ((i=0; i<R_RES_LESS; i++))
     do
         echo "-R$i";
