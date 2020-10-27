@@ -1,0 +1,85 @@
+#!/bin/bash
+R_RES=40
+C_RES=80
+stty rows $R_RES;
+stty cols $C_RES;
+
+fontsize=(12 14 16 18 20 22 24 28 32)
+echo
+echo "Change your font size"
+while true; do
+
+    echo
+    read -p "Adjust font size [0-8] or 'c' to continue: " level
+
+    case $level in
+
+        [0-8]) setfont ter-m${fontsize[$level]}n
+        ;;
+
+        c) break
+        ;;
+
+        *) echo "'$level' is invalid. Try again."
+        ;;
+
+    esac
+
+done
+
+echo
+echo "Temporary fix for Macs resolution problem, setting cols and rows"
+echo "Find a number such that + is the last character in the line, current - $C_RES"
+while true; do
+
+    C_RES_LESS=$((C_RES-1))
+    for ((i=0; i<C_RES_LESS; i++))
+    do
+        printf "-";
+    done
+    printf "+";
+    echo
+    read -p "Adjust cols resolution or 'c' to continue: " C_RES
+
+    case $C_RES in
+
+        [1-9]|[1-9][0-9]|[1-9][0-9][0-9]) stty cols $C_RES
+        ;;
+
+        c) break
+        ;;
+
+        *) echo "'$C_RES' is invalid. Try again."
+        ;;
+
+    esac
+
+done
+
+echo
+while true; do
+
+    clear;
+    R_RES_LESS=$((R_RES-2))
+    for ((i=0; i<R_RES_LESS; i++))
+    do
+        echo "-R$i";
+    done
+    echo "Find a number such that the prompt is still on screen, current - $R_RES"
+    echo
+    read -p "Adjust rows resolution (this should be the last line) or 'c' to continue: " R_RES
+
+    case $R_RES in
+
+        [1-9]|[1-9][0-9]) stty rows $R_RES
+        ;;
+
+        c) break
+        ;;
+
+        *) echo "'$R_RES' is invalid. Try again."
+        ;;
+
+    esac
+
+done
