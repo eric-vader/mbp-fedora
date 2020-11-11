@@ -103,4 +103,5 @@ chmod +x ${INSTALL_ROOT}/lib/systemd/system-sleep/rmmod_tb.sh
 %end
 
 %include fedora-live-soc.ks
-bootloader --append="enforcing=0 efi=noruntime pcie_ports=compat modprobe.blacklist=thunderbolt vconsole.font=ter-m20n rd.live.ram"
+#  rd.live.ram
+bootloader --append="enforcing=0 efi=noruntime pcie_ports=compat modprobe.blacklist=thunderbolt vconsole.font=ter-m20n"
