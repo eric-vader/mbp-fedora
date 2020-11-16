@@ -32,6 +32,7 @@ echo "Temporary fix for Macs resolution problem, setting cols and rows"
 echo "Find a number such that + is the last character in the line, current - $C_RES"
 while true; do
 
+    clear;
     C_RES_LESS=$((C_RES-1))
     for ((i=0; i<C_RES_LESS; i++))
     do
